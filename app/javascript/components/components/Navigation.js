@@ -1,13 +1,14 @@
-import React from "react"
-import { Nav, NavItem } from "reactstrap"
-import { NavLink } from "react-router-dom"
+import React from "react";
+import { Nav, NavItem } from "reactstrap";
+import { NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Navigation = ({
   logged_in,
   current_user,
   new_user_route,
   sign_in_route,
-  sign_out_route
+  sign_out_route,
 }) => {
   return (
     <>
@@ -16,6 +17,7 @@ const Navigation = ({
           <NavLink to="/" className="nav-link">
             Home
           </NavLink>
+          <NavLink to="/apartmentindex">Apartment Index</NavLink>
         </NavItem>
         {logged_in && (
           <NavItem>
@@ -40,7 +42,7 @@ const Navigation = ({
         )}
       </Nav>
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
