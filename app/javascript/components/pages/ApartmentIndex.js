@@ -10,7 +10,7 @@ const ApartmentIndex = ({}) => {
   
     <>
       <h3>ApartmentIndex</h3>
-        {apartments.map((apartment, index) => {
+        {apartments?.map((apartment, index) => {
           return (
           <Card
         style={{
