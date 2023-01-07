@@ -31,10 +31,8 @@ const App = (props) => {
     <BrowserRouter>
       <Header {...props} />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/apartmentindex" element={<ApartmentIndex apartments={apartments} />} />
         <Route exact path="/" element={<Home {...props} />} />
-        <Route path="/apartmentindex" element={<ApartmentIndex />} />
+        <Route path="/apartmentindex"element={<ApartmentIndex apartments={apartments} />} />
         <Route path="/apartmentshow" element={<ApartmentShow />} />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
@@ -42,7 +40,7 @@ const App = (props) => {
       </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
 export default App
