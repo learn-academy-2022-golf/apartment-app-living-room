@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-
+import ProtectedIndex from "./pages/ProtectedIndex"
 import ApartmentEdit from "./pages/ApartmentEdit"
 import ApartmentIndex from "./pages/ApartmentIndex"
 import ApartmentNew from "./pages/ApartmentNew"
@@ -15,7 +15,6 @@ import NotFound from "./pages/NotFound"
 
 const App = (props) => {
   const [apartments, setApartments] = useState([])
-
   useEffect(() => {
     readApartments()
   }, [])
@@ -28,6 +27,21 @@ const App = (props) => {
       })
       .catch((error) => console.log(error))
   }
+
+  const createApartment = (apartment) => {
+    console.log(apartment)
+    // fetch("http://localhost:3000/apartments", {
+    //   body: JSON.stringify(apartment),
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   method: "POST"
+    // })
+    // .then((response) => response.json())
+    // .then((payload) => readApartments())
+    // .catch((errors) => console.log("Apartment create errors:", errors))
+  }
+
 
   return (
     <BrowserRouter>
@@ -43,6 +57,10 @@ const App = (props) => {
           element={<ApartmentShow apartments={apartments} />}
         />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
+        <Route path="/apartmentindex"element={<ApartmentIndex apartments={apartments} />} />
+        <Route path="/protectedindex"element={<ProtectedIndex apartments={apartments} {...props} />} />
+        <Route path="/apartmentshow" element={<ApartmentShow />} />
+        <Route path="/apartmentnew" element={<ApartmentNew createApartment={createApartment} {...props}/>} />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
         <Route element={<NotFound />} />
       </Routes>

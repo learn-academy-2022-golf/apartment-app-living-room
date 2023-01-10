@@ -47,6 +47,13 @@ const Navigation = ({
             </NavLink>
           </NavItem>
         )}
+        {logged_in && (
+          <NavItem>
+            <NavLink href="/apartmentnew" className="nav-link">
+              Make a new apartment
+            </NavLink>
+          </NavItem>
+        )}
       </Nav>
     </>
   );

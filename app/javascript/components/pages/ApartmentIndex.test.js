@@ -8,3 +8,4 @@ describe("<ApartmentIndex />", () => {
     render(<ApartmentIndex />, div)
   })
 })
+   
