@@ -28,7 +28,7 @@ const ApartmentIndex = () => {
         <ListGroup flush>
           <ListGroupItem>Current Listed Price ${apartment.price}</ListGroupItem>
           <ListGroupItem>Bedrooms: {apartment.bedrooms}, Bathrooms: {apartment.bathrooms}</ListGroupItem>
-          <ListGroupItem>Pets allowed: {apartment.pets}</ListGroupItem>
+          <ListGroupItem>{apartment.pets}</ListGroupItem>
         </ListGroup>
         <CardBody>
           <CardLink href="#">Card Link</CardLink>
