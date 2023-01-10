@@ -1,19 +1,23 @@
 import React from "react";
 import { Card, CardTitle, CardBody, CardText, CardLink, ListGroup, ListGroupItem } from "reactstrap";
 import { NavLink } from "react-router-dom"
-import apartments from '../mockApartments'
 
 
 
-const ApartmentIndex = () => {
+const ProtectedIndex = ({apartments, current_user}) => {
+      console.log(current_user) 
+      const current_user_apts = apartments?.filter(apartment => {
+        return apartment.user_id === current_user.id 
+    
+      }) 
   return (
-  
+
     <>
-      <h3>ApartmentIndex</h3>
-        {apartments?.map((apartment, index) => {
+      <h3>CurrentApartmentIndex</h3>
+        {current_user_apts?.map((apartment, index) => {
           return (
           <Card
-        key={index}
+          key={index}
         style={{
           width: "18rem",
         }}
@@ -21,7 +25,7 @@ const ApartmentIndex = () => {
         <img alt="Card" src={apartment.image} />
         <CardBody>
           <CardTitle tag="h5">
-            {apartment.street}, {apartment.city}, {apartment.state}
+            {apartment.street}
           </CardTitle>
           <CardText>The manager is {apartment.manager}, and can be reached via email at {apartment.email}.</CardText>
         </CardBody>
@@ -40,4 +44,4 @@ const ApartmentIndex = () => {
   );
 };
 
-export default ApartmentIndex;
+export default ProtectedIndex;
