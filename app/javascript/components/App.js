@@ -11,6 +11,8 @@ import ApartmentShow from "./pages/ApartmentShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 
+
+
 const App = (props) => {
   const [apartments, setApartments] = useState([])
   useEffect(() => {
@@ -46,6 +48,15 @@ const App = (props) => {
       <Header {...props} />
       <Routes>
         <Route exact path="/" element={<Home {...props} />} />
+        <Route
+          path="/apartmentindex"
+          element={<ApartmentIndex apartments={apartments} />}
+        />
+        <Route
+          path="/apartmentshow/:id"
+          element={<ApartmentShow apartments={apartments} />}
+        />
+        <Route path="/apartmentnew" element={<ApartmentNew />} />
         <Route path="/apartmentindex"element={<ApartmentIndex apartments={apartments} />} />
         <Route path="/protectedindex"element={<ProtectedIndex apartments={apartments} {...props} />} />
         <Route path="/apartmentshow" element={<ApartmentShow />} />

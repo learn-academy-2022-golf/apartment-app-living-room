@@ -46,7 +46,6 @@ const Navigation = ({
               My listings
             </NavLink>
           </NavItem>
-          
         )}
         {logged_in && (
           <NavItem>
