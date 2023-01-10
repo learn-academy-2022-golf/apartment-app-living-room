@@ -10,7 +10,7 @@ const apartments = [
     bathrooms: 2,
     pets: "yes",
     image:
-      "https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg"
+      "https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg",
   },
   {
     street: "15 Yemen Road",
