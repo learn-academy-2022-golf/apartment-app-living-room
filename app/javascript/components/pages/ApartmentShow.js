@@ -10,14 +10,14 @@ import {
   ListGroupItem,
   Button,
 } from "reactstrap";
-import apartments from "../mockApartments";
 
 
-const ApartmentShow = ({ }) => {
+
+const ApartmentShow = ({ apartments }) => {
   const { id } = useParams();
-    // console.log(currentApartment);
-    // console.log(apartments);
-  const currentApartment = apartments[id - 1]
+    console.log(apartments);
+
+  const currentApartment = apartments?.find(apartment => apartment.id === +id)
 
     
 
