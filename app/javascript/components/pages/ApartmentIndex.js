@@ -5,7 +5,7 @@ import apartments from '../mockApartments'
 
 
 
-const ApartmentIndex = ({}) => {
+const ApartmentIndex = () => {
   return (
   
     <>
@@ -13,6 +13,7 @@ const ApartmentIndex = ({}) => {
         {apartments?.map((apartment, index) => {
           return (
           <Card
+        key={index}
         style={{
           width: "18rem",
         }}
