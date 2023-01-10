@@ -1,12 +1,11 @@
 import React from "react";
 import { Card, CardTitle, CardBody, CardText, CardLink, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { NavLink } from "react-router-dom"
-// import apartments from '../mockApartments'
+
 
 
 
 const ApartmentIndex = ({ apartments }) => {
-const ApartmentIndex = () => {
   return (
   
     <>
@@ -72,7 +71,6 @@ const ApartmentIndex = () => {
           <CardLink href="#">Another Card Link</CardLink>
         </CardBody>
       </Card>
-        )})}
     </>
   );
 };
