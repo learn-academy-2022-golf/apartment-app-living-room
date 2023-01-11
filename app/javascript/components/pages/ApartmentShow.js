@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, useNavigate } from "react-router-dom";
 import {
   Card,
   CardTitle,
@@ -11,15 +11,19 @@ import {
   Button,
 } from "reactstrap";
 
-
-
-const ApartmentShow = ({ apartments }) => {
+const ApartmentShow = ({ apartments, deleteApartment, current_user }) => {
+  const navigate = useNavigate();
   const { id } = useParams();
-    console.log(apartments);
+  console.log(apartments);
 
-  const currentApartment = apartments?.find(apartment => apartment.id === +id)
-
-    
+  const currentApartment = apartments?.find(
+    (apartment) => apartment.id === +id
+  );
+  console.log(currentApartment);
+  const handleSubmit = () => {
+    deleteApartment(id);
+    navigate(`/apartmentindex`);
+  };
 
   return (
     <>
@@ -52,14 +56,20 @@ const ApartmentShow = ({ apartments }) => {
         </ListGroup>
         <CardBody>
           <NavLink to="/apartmentindex" className="nav-link">
-          <Button>Back to Apartments</Button>
+            <Button>Back to Apartments</Button>
           </NavLink>
-          <NavLink
+
+          {currentApartment.user_id === current_user.id && (
+            <>
+              <NavLink
                 to={`/apartmentedit/${currentApartment.id}`}
                 className="nav-link"
               >
                 <Button>Update Apartment</Button>
               </NavLink>
+              <Button onClick={handleSubmit}>Delete Apartment</Button>
+            </>
+          )}
         </CardBody>
       </Card>
     </>

@@ -55,6 +55,18 @@ const App = (props) => {
       .catch((errors) => console.log("Apartment update errors:", errors))
   }
 
+  const deleteApartment = (id) => {
+    fetch(`http://localhost:3000/apartments/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((payload) => readApartments())
+      .catch((errors) => console.log("delete errors:", errors))
+  }
+
 
   return (
     <BrowserRouter>
@@ -63,7 +75,7 @@ const App = (props) => {
         <Route exact path="/" element={<Home {...props} />} />
         <Route
           path="/apartmentshow/:id"
-          element={<ApartmentShow apartments={apartments} />}
+          element={<ApartmentShow apartments={apartments} {...props} deleteApartment={deleteApartment}/>}
         />
         <Route
           path="/apartmentindex"
