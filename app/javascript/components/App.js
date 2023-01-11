@@ -57,10 +57,24 @@ const App = (props) => {
           element={<ApartmentShow apartments={apartments} />}
         />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
-        <Route path="/apartmentindex"element={<ApartmentIndex apartments={apartments} />} />
-        <Route path="/protectedindex"element={<ProtectedIndex apartments={apartments} {...props} />} />
-        <Route path="/apartmentshow" element={<ApartmentShow />} />
-        <Route path="/apartmentnew" element={<ApartmentNew createApartment={createApartment} {...props}/>} />
+        <Route
+          path="/apartmentindex"
+          element={<ApartmentIndex apartments={apartments} />}
+        />
+        <Route
+          path="/protectedindex"
+          element={<ProtectedIndex apartments={apartments} {...props} />}
+        />
+        <Route
+          path="/apartmentshow"
+          element={<ApartmentShow apartments={apartments} />}
+        />
+        <Route
+          path="/apartmentnew"
+          element={
+            <ApartmentNew createApartment={createApartment} {...props} />
+          }
+        />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
         <Route element={<NotFound />} />
       </Routes>
