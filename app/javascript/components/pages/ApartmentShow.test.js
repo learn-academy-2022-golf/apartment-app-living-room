@@ -8,7 +8,7 @@ const renderComponent = () => {
   render(
     <MemoryRouter initialEntries={["/apartmentshow/1"]}>
       <Routes>
-        <Route path="apartmentshow/:id" element={<ApartmentShow apartments={apartments} />} />
+        <Route path="apartmentshow/:id" element={<ApartmentShow apartments={apartments}/>} />
       </Routes>
     </MemoryRouter>
   );

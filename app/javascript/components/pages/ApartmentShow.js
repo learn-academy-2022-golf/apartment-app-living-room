@@ -52,8 +52,14 @@ const ApartmentShow = ({ apartments }) => {
         </ListGroup>
         <CardBody>
           <NavLink to="/apartmentindex" className="nav-link">
-            Back to Apartments
+          <Button>Back to Apartments</Button>
           </NavLink>
+          <NavLink
+                to={`/apartmentedit/${currentApartment.id}`}
+                className="nav-link"
+              >
+                <Button>Update Apartment</Button>
+              </NavLink>
         </CardBody>
       </Card>
     </>
