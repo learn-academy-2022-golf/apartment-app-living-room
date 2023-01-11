@@ -66,12 +66,12 @@ RSpec.describe "Apartments", type: :request do
             city:"",
             state:"",
             manager:"",
-            email:"magoo@example.com", 
-            price:"2k", 
-            bedrooms:2, 
-            bathrooms:2, 
-            pets:"cats only",
-            image:"exampleimage.com", 
+            email:"", 
+            price:"", 
+            bedrooms:"", 
+            bathrooms:"", 
+            pets:"",
+            image:"", 
             user_id: user.id    }
         }
         apartment = Apartment.last
@@ -82,6 +82,12 @@ RSpec.describe "Apartments", type: :request do
         expect(json['city']).to include "can't be blank"
         expect(json['state']).to include "can't be blank"
         expect(json['manager']).to include "can't be blank"
+        expect(json['email']).to include "can't be blank"
+        expect(json['price']).to include "can't be blank"
+        expect(json['bedrooms']).to include "can't be blank"
+        expect(json['bathrooms']).to include "can't be blank"
+        expect(json['pets']).to include "can't be blank"
+        expect(json['image']).to include "can't be blank"
       end
     end
 
