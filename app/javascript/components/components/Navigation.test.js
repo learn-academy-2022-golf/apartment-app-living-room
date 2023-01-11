@@ -23,4 +23,13 @@ describe("<Navigation />", () => {
     userEvent.click(screen.getByText("Home"))
     expect(screen.getByText("Home")).toBeInTheDocument()
   })
+  it("has clickable links", () => {
+    render(
+      <BrowserRouter>
+        <Navigation />
+      </BrowserRouter>
+    );
+    userEvent.click(screen.getByText("Apartment Index"));
+    expect(screen.getByText("Apartment Index")).toBeInTheDocument();
+  });
 })
