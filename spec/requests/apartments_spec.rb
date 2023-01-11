@@ -153,6 +153,30 @@ RSpec.describe "Apartments", type: :request do
       json = JSON.parse(response.body)
       expect(json['street']).to include "can't be blank"
     end
+
+  describe 'DELETE /destroy' do
+      it 'can delete an apartment' do
+        user = User.where(email: 'test@test.test').first_or_create(password: '12345678', password_confirmation: '12345678')
+        user.apartments.create(
+          street: "123 Main St",
+          city:"San Diego",
+          state:"CA",
+          manager:"Mr. Magoo",
+          email:"magoo@example.com", 
+          price:"2k", 
+          bedrooms:2, 
+          bathrooms:2, 
+          pets:"cats only",
+          image:"exampleimage.com", 
+          user_id: user.id
+      )   
+
+        apartment = Apartment.last
+        delete "/apartments/#{apartment.id}"
+        expect(response).to have_http_status(200)
+        expect(Apartment.all).to be_empty
+      end
+    end
   end
 end
 
