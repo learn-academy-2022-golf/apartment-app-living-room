@@ -4,7 +4,8 @@ import ApartmentShow from "./ApartmentShow";
 import { MemoryRouter, Routes, Route, BrowserRouter } from "react-router-dom";
 import apartments from "../mockApartments";
 
-describe("ApartmentShow /", () => {
+
+describe("<ApartmentShow />", () => {
   it("renders without crashing", () => {
     const apartments = [
       {

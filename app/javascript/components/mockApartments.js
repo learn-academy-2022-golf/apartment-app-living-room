@@ -1,5 +1,6 @@
 const apartments = [
   {
+    id: 1,
     street: "4 Privet Drive",
     city: "Little Whinging",
     state: "Surrey",
@@ -11,7 +12,7 @@ const apartments = [
     pets: "yes",
     image:
       "https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg",
-    user_id: 2,
+    user_id: 2
   },
   {
     street: "15 Yemen Road",
