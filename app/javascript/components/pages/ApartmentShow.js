@@ -21,7 +21,7 @@ const ApartmentShow = ({ apartments, deleteApartment, current_user }) => {
   );
   console.log(currentApartment);
   const handleSubmit = () => {
-    deleteApartment(id);
+    deleteApartment(currentApartment.id);
     navigate(`/apartmentindex`);
   };
 

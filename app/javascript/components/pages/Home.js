@@ -14,9 +14,8 @@ const Home = ({
       <div>
         <h1>Welcome!</h1>
         <p>
-          This is a description of the apartments app. This is a description of
-          the apartments app. This is a description of the apartments app. This
-          is a description of the apartments app.
+          Welcome to the apartment app! Enjoy browsing and may you find the home
+          of your dreams! 😀
         </p>
       </div>
       {!logged_in && (
@@ -35,7 +34,7 @@ const Home = ({
       )}
       {logged_in && (
         <NavItem>
-            {/* {  change this link to go to the Protected Index} */}
+          {/* {  change this link to go to the Protected Index} */}
           <NavLink href="/apartmentindex" className="nav-link">
             My Listings
           </NavLink>
